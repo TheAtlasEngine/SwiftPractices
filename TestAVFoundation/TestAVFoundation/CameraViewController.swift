@@ -13,8 +13,10 @@ class CameraViewController: UIViewController {
 
     @IBOutlet weak var cameraView: UIView!
     
+    static let shared = CameraViewController()
+    
+    let captureSession = AVCaptureSession()
     private var captureDevice: AVCaptureDevice!
-    private let captureSession = AVCaptureSession()
     private var deviceInput: AVCaptureDeviceInput!
     private var livePreviewQueue: DispatchQueue!
     private var livePreviewLayer: AVCaptureVideoPreviewLayer!
@@ -43,16 +45,6 @@ class CameraViewController: UIViewController {
     @IBAction func captureButtonTapped(_ sender: Any) {
         capturePic()
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
 
 extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
@@ -69,37 +61,33 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     
     func beginSession() {
         
-        
         do {
             self.deviceInput = try AVCaptureDeviceInput(device: self.captureDevice)
-            
-            guard self.deviceInput != nil else {
-                preconditionFailure("deviceInput Failure")
-            }
-            
-            if self.captureSession.canAddInput(self.deviceInput) {
-                self.captureSession.addInput(self.deviceInput)
-            }
-            
-            self.livePreviewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
-            self.livePreviewLayer.frame = self.cameraView.bounds
-            self.livePreviewLayer.videoGravity = .resizeAspectFill
-            self.cameraView.layer.masksToBounds = true
-            self.cameraView.layer.addSublayer(self.livePreviewLayer)
-            
-            self.photoOutput = AVCapturePhotoOutput()
-            
-            self.photoSettings = self.getSettings()
-            
-            if self.captureSession.canAddOutput(self.photoOutput) {
-                self.captureSession.addOutput(self.photoOutput)
-            }
-            
-            self.captureSession.startRunning()
-            
         } catch let error as NSError {
             print("error: \(error.localizedDescription)")
         }
+        
+        guard self.deviceInput != nil else {
+            preconditionFailure("deviceInput Failure")
+        }
+        
+        if self.captureSession.canAddInput(self.deviceInput) {
+            self.captureSession.addInput(self.deviceInput)
+        }
+        
+        self.livePreviewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
+        self.livePreviewLayer.frame = self.cameraView.bounds
+        self.livePreviewLayer.videoGravity = .resizeAspectFill
+        self.cameraView.layer.masksToBounds = true
+        self.cameraView.layer.addSublayer(self.livePreviewLayer)
+        
+        self.photoOutput = AVCapturePhotoOutput()
+        
+        if self.captureSession.canAddOutput(self.photoOutput) {
+            self.captureSession.addOutput(self.photoOutput)
+        }
+        
+        self.captureSession.startRunning()
     }
     
     private func getSettings() -> AVCapturePhotoSettings {
@@ -115,7 +103,7 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
 extension CameraViewController: AVCapturePhotoCaptureDelegate {
     func capturePic() {
         if photoOutput.connection(with: .video) != nil {
-            self.photoOutput.capturePhoto(with: self.photoSettings, delegate: self)
+            self.photoOutput.capturePhoto(with: self.getSettings(), delegate: self)
         }
     }
     
@@ -128,8 +116,7 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
             print("photodata is nil")
             return
         }
-
-        //let photo = UIImage(data: photoData)
+        
         guard let originalPhoto = UIImage(data: photoData) else {
             print("originalPhoto Failure")
             return

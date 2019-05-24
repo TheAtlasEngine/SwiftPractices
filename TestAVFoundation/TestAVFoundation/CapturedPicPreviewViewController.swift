@@ -11,7 +11,6 @@ import UIKit
 class CapturedPicPreviewViewController: UIViewController {
 
     @IBOutlet weak var previewView: UIImageView!
-    
     static let storyboardIdentifier = "CapturedPicPreviewViewController"
     
     override func viewDidLoad() {
@@ -45,14 +44,6 @@ class CapturedPicPreviewViewController: UIViewController {
     }
     
     private func backToCameraView() {
-        let cameraVC = storyboard!.instantiateViewController(withIdentifier: CameraViewController.storyboardIdentifier) as! CameraViewController
-        
-        _ = cameraVC.view
-        
-        cameraVC.retakeButtonTapped = {
-            cameraVC.setupCameraView()
-        }
-        
         self.dismiss(animated: true, completion: nil)
     }
     
