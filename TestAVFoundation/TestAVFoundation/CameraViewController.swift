@@ -9,6 +9,11 @@
 import UIKit
 import AVFoundation
 
+enum CameraPosition {
+    case back
+    case front
+}
+
 class CameraViewController: UIViewController {
 
     @IBOutlet weak var cameraView: UIView!
@@ -23,6 +28,7 @@ class CameraViewController: UIViewController {
     private var photoOutput: AVCapturePhotoOutput!
     private var photoSettings: AVCapturePhotoSettings!
     private var photo: CGImage!
+    private var currentCameraPosition: CameraPosition = .back
     
     private let queueLabel = "CaptureQueue"
     static let storyboardIdentifier = "CameraViewController"
@@ -44,6 +50,29 @@ class CameraViewController: UIViewController {
     
     @IBAction func captureButtonTapped(_ sender: Any) {
         capturePic()
+    }
+    @IBAction func changeCameraButtonTapped(_ sender: Any) {
+        changeCamera()
+    }
+    private func changeCamera() {
+        self.captureSession.stopRunning()
+        self.captureSession.removeInput(self.deviceInput)
+        
+        //--------------------------------------------
+        // Try this: remove output
+        //--------------------------------------------
+        self.captureSession.removeOutput(self.photoOutput)
+        
+        switch currentCameraPosition {
+        case .back:
+            self.captureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front)
+            self.currentCameraPosition = .front
+        case .front:
+            self.captureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
+            self.currentCameraPosition = .back
+        }
+        
+        self.beginSession()
     }
 }
 
@@ -83,9 +112,17 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         
         self.photoOutput = AVCapturePhotoOutput()
         
-        if self.captureSession.canAddOutput(self.photoOutput) {
-            self.captureSession.addOutput(self.photoOutput)
+        guard let unwrappedPhotoOutput = self.photoOutput else {
+            fatalError("can not unwrap photo output")
         }
+        
+//        if self.captureSession.canAddOutput(unwrappedPhotoOutput) {
+//            self.captureSession.addOutput(unwrappedPhotoOutput)
+//        } else {
+//            fatalError("can not add output: self.photoOutput = \(self.photoOutput)")
+//        }
+        
+        self.captureSession.addOutput(unwrappedPhotoOutput)
         
         self.captureSession.startRunning()
     }
@@ -142,7 +179,6 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
         _ = capturedPicPreviewController.view
         capturedPicPreviewController.previewView.image = croppedImage
         
-        //stopCamera()
         self.present(capturedPicPreviewController, animated: true, completion: nil)
     }
 }
