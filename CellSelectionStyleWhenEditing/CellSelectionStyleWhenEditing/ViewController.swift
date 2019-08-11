@@ -10,64 +10,46 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     private let cellId = "cell"
-    private var isEditingMode = true
+    static let id = "VC"
     
-    private let dummyData = ["cell text 1",
-                             "cell text 2",
-                             "cell text 3",
-                             "cell text 4",
-                             "cell text 5",
-                             "cell text 6",
-                             "cell text 7",
-                             "cell text 8",
-                             "cell text 9",
-                             "cell text 10",
-                             "cell text 11",
-                             "cell text 12",
-                             "cell text 13",
-                             "cell text 14",
-                             "cell text 15",
-                             "cell text 16",
-                             "cell text 17",
-                             "cell text 18",
-                             "cell text 19",
-                             "cell text 20",
-                             "cell text 21"
-    ]
+    private let allData: [String] = (1...21).map {
+        return "cell text \($0)"
+    }
+    
+    lazy var dataSelectState: DataSelectState = {
+        return DataSelectState(allData: self.allData)
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.allowsMultipleSelectionDuringEditing = true
-        tableView.allowsSelection = false
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(toEditMode))
-    }
-    
-    @objc private func toEditMode() {
-        tableView.setEditing(isEditingMode, animated: true)
-        isEditingMode = !isEditingMode
+        tableView.allowsMultipleSelection = true
     }
 
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dummyData.count
+        return allData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        cell.textLabel?.text = dummyData[indexPath.row]
+        cell.textLabel?.text = allData[indexPath.row]
         cell.tintColor = UIColor.orange
-        
-        let backgroundView = UIView()
-        backgroundView.backgroundColor = .clear
-        cell.selectedBackgroundView = backgroundView
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        cell.accessoryType = .checkmark
+    }
+    
+    
 }
