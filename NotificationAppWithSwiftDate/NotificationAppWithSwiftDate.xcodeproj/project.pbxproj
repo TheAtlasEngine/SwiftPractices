@@ -103,12 +103,10 @@
 		218CDC9423516B52003A42EB /* NotificationAppWithSwiftDate */ = {
 			isa = PBXGroup;
 			children = (
+				218CDCC823517D8E003A42EB /* Shared */,
 				218CDCA723516EBC003A42EB /* Model */,
 				218CDCBA23517176003A42EB /* ViewModel */,
 				218CDCC1235175D0003A42EB /* View */,
-				218CDC9523516B52003A42EB /* AppDelegate.swift */,
-				218CDC9C23516B59003A42EB /* Assets.xcassets */,
-				218CDC9E23516B59003A42EB /* LaunchScreen.storyboard */,
 				218CDCA123516B59003A42EB /* Info.plist */,
 			);
 			path = NotificationAppWithSwiftDate;
@@ -145,10 +143,20 @@
 		218CDCC1235175D0003A42EB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				218CDC9E23516B59003A42EB /* LaunchScreen.storyboard */,
 				218CDCC2235175F5003A42EB /* MainViewController.swift */,
 				218CDCC423517609003A42EB /* MainViewController.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		218CDCC823517D8E003A42EB /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				218CDC9523516B52003A42EB /* AppDelegate.swift */,
+				218CDC9C23516B59003A42EB /* Assets.xcassets */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		E5EB68D8BD3DAE473B2B5600 /* Frameworks */ = {
