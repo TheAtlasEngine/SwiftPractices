@@ -20,6 +20,8 @@
 		218CDCC72351781A003A42EB /* NewTodoItemSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CDCC62351781A003A42EB /* NewTodoItemSettingViewModel.swift */; };
 		218CDCCB23517E23003A42EB /* TodoItemCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CDCC923517E23003A42EB /* TodoItemCellView.swift */; };
 		218CDCCC23517E23003A42EB /* TodoItemCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218CDCCA23517E23003A42EB /* TodoItemCellView.xib */; };
+		218CDCD123518A3E003A42EB /* NewTodoItemSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CDCD023518A3E003A42EB /* NewTodoItemSettingViewController.swift */; };
+		218CDCD323518A48003A42EB /* NewTodoItemSettingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 218CDCD223518A48003A42EB /* NewTodoItemSettingViewController.storyboard */; };
 		82D0ABD39C6CCA2569A1D69E /* Pods_NotificationAppWithSwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C010DD71D18D832053E42F /* Pods_NotificationAppWithSwiftDate.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +53,8 @@
 		218CDCC62351781A003A42EB /* NewTodoItemSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTodoItemSettingViewModel.swift; sourceTree = "<group>"; };
 		218CDCC923517E23003A42EB /* TodoItemCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemCellView.swift; sourceTree = "<group>"; };
 		218CDCCA23517E23003A42EB /* TodoItemCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoItemCellView.xib; sourceTree = "<group>"; };
+		218CDCD023518A3E003A42EB /* NewTodoItemSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTodoItemSettingViewController.swift; sourceTree = "<group>"; };
+		218CDCD223518A48003A42EB /* NewTodoItemSettingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewTodoItemSettingViewController.storyboard; sourceTree = "<group>"; };
 		80C010DD71D18D832053E42F /* Pods_NotificationAppWithSwiftDate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationAppWithSwiftDate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D8903AFB04873C4DF0A52A /* Pods-NotificationAppWithSwiftDate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationAppWithSwiftDate.release.xcconfig"; path = "Target Support Files/Pods-NotificationAppWithSwiftDate/Pods-NotificationAppWithSwiftDate.release.xcconfig"; sourceTree = "<group>"; };
 		E7E9057550410C54313912FB /* Pods-NotificationAppWithSwiftDate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationAppWithSwiftDate.debug.xcconfig"; path = "Target Support Files/Pods-NotificationAppWithSwiftDate/Pods-NotificationAppWithSwiftDate.debug.xcconfig"; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 			children = (
 				218CDCCD23517E59003A42EB /* TodoItemCellView */,
 				218CDCCE23517E6E003A42EB /* MainViewController */,
+				218CDCCF23518A18003A42EB /* NewTodoItemSettingViewController */,
 				218CDC9E23516B59003A42EB /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -179,6 +184,15 @@
 				218CDCC423517609003A42EB /* MainViewController.storyboard */,
 			);
 			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		218CDCCF23518A18003A42EB /* NewTodoItemSettingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				218CDCD023518A3E003A42EB /* NewTodoItemSettingViewController.swift */,
+				218CDCD223518A48003A42EB /* NewTodoItemSettingViewController.storyboard */,
+			);
+			path = NewTodoItemSettingViewController;
 			sourceTree = "<group>";
 		};
 		E5EB68D8BD3DAE473B2B5600 /* Frameworks */ = {
@@ -273,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				218CDCA023516B59003A42EB /* LaunchScreen.storyboard in Resources */,
+				218CDCD323518A48003A42EB /* NewTodoItemSettingViewController.storyboard in Resources */,
 				218CDCCC23517E23003A42EB /* TodoItemCellView.xib in Resources */,
 				218CDCC523517609003A42EB /* MainViewController.storyboard in Resources */,
 				218CDC9D23516B59003A42EB /* Assets.xcassets in Resources */,
@@ -342,6 +357,7 @@
 				218CDC9623516B52003A42EB /* AppDelegate.swift in Sources */,
 				218CDCC3235175F5003A42EB /* MainViewController.swift in Sources */,
 				218CDCBE235171E2003A42EB /* TodoItemCellViewModel.swift in Sources */,
+				218CDCD123518A3E003A42EB /* NewTodoItemSettingViewController.swift in Sources */,
 				218CDCC0235172CD003A42EB /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
