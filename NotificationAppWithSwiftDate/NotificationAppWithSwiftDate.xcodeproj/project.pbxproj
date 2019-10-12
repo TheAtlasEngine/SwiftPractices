@@ -23,6 +23,7 @@
 		218CDCD123518A3E003A42EB /* NewTodoItemSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CDCD023518A3E003A42EB /* NewTodoItemSettingViewController.swift */; };
 		218CDCD323518A48003A42EB /* NewTodoItemSettingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 218CDCD223518A48003A42EB /* NewTodoItemSettingViewController.storyboard */; };
 		218CDCD523519806003A42EB /* NewTodoItemSettingNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CDCD423519806003A42EB /* NewTodoItemSettingNavigationViewController.swift */; };
+		218CDCD823519EAB003A42EB /* PickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CDCD723519EAB003A42EB /* PickerTextField.swift */; };
 		82D0ABD39C6CCA2569A1D69E /* Pods_NotificationAppWithSwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C010DD71D18D832053E42F /* Pods_NotificationAppWithSwiftDate.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		218CDCD023518A3E003A42EB /* NewTodoItemSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTodoItemSettingViewController.swift; sourceTree = "<group>"; };
 		218CDCD223518A48003A42EB /* NewTodoItemSettingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewTodoItemSettingViewController.storyboard; sourceTree = "<group>"; };
 		218CDCD423519806003A42EB /* NewTodoItemSettingNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTodoItemSettingNavigationViewController.swift; sourceTree = "<group>"; };
+		218CDCD723519EAB003A42EB /* PickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTextField.swift; sourceTree = "<group>"; };
 		80C010DD71D18D832053E42F /* Pods_NotificationAppWithSwiftDate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationAppWithSwiftDate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D8903AFB04873C4DF0A52A /* Pods-NotificationAppWithSwiftDate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationAppWithSwiftDate.release.xcconfig"; path = "Target Support Files/Pods-NotificationAppWithSwiftDate/Pods-NotificationAppWithSwiftDate.release.xcconfig"; sourceTree = "<group>"; };
 		E7E9057550410C54313912FB /* Pods-NotificationAppWithSwiftDate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationAppWithSwiftDate.debug.xcconfig"; path = "Target Support Files/Pods-NotificationAppWithSwiftDate/Pods-NotificationAppWithSwiftDate.debug.xcconfig"; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		218CDC9423516B52003A42EB /* NotificationAppWithSwiftDate */ = {
 			isa = PBXGroup;
 			children = (
+				218CDCD623519E85003A42EB /* UIComponent */,
 				218CDCC823517D8E003A42EB /* Shared */,
 				218CDCA723516EBC003A42EB /* Model */,
 				218CDCBA23517176003A42EB /* ViewModel */,
@@ -196,6 +199,14 @@
 				218CDCD223518A48003A42EB /* NewTodoItemSettingViewController.storyboard */,
 			);
 			path = NewTodoItemSettingViewController;
+			sourceTree = "<group>";
+		};
+		218CDCD623519E85003A42EB /* UIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				218CDCD723519EAB003A42EB /* PickerTextField.swift */,
+			);
+			path = UIComponent;
 			sourceTree = "<group>";
 		};
 		E5EB68D8BD3DAE473B2B5600 /* Frameworks */ = {
@@ -353,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				218CDCD823519EAB003A42EB /* PickerTextField.swift in Sources */,
 				218CDCB923516F8A003A42EB /* RepeatUnit.swift in Sources */,
 				218CDCCB23517E23003A42EB /* TodoItemCellView.swift in Sources */,
 				218CDCC72351781A003A42EB /* NewTodoItemSettingViewModel.swift in Sources */,
