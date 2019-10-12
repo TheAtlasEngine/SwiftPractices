@@ -57,8 +57,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="RepeatUnitLabel" destination="MA5-Bc-H1h" id="I7g-pG-vjp"/>
                 <outlet property="deadLineLabel" destination="ivC-Yq-xJh" id="Klm-NA-cvE"/>
+                <outlet property="repeatUnitLabel" destination="MA5-Bc-H1h" id="I7g-pG-vjp"/>
                 <outlet property="titleLabel" destination="VPY-0B-L4v" id="4Sq-hg-ioS"/>
             </connections>
             <point key="canvasLocation" x="47.826086956521742" y="46.540178571428569"/>
