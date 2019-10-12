@@ -14,6 +14,8 @@ final class TodoItemCellView: UITableViewCell {
     @IBOutlet private weak var deadLineLabel: UILabel!
     @IBOutlet private weak var repeatUnitLabel: UILabel!
     
+    static let id = "TodoItemCellView"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
