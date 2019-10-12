@@ -158,7 +158,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="dayPickerTextField" destination="Jr2-Km-biU" id="EyO-vd-3bz"/>
+                        <outlet property="monthPickerTextField" destination="Lnm-HV-Pbs" id="xYZ-Rf-7mg"/>
                         <outlet property="titleTextField" destination="FxI-MO-D7r" id="Ddj-wj-bTg"/>
+                        <outlet property="yearPickerTextField" destination="VO9-fi-RD9" id="26K-3T-dtY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ax-bR-oeb" userLabel="First Responder" sceneMemberID="firstResponder"/>

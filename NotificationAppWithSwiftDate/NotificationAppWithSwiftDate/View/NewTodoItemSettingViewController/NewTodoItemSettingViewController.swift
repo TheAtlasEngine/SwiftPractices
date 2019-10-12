@@ -11,6 +11,9 @@ import UIKit
 final class NewTodoItemSettingViewController: UIViewController {
 
     @IBOutlet private weak var titleTextField: UITextField!
+    @IBOutlet private weak var yearPickerTextField: PickerTextField!
+    @IBOutlet private weak var monthPickerTextField: PickerTextField!
+    @IBOutlet private weak var dayPickerTextField: PickerTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
