@@ -10,8 +10,13 @@ import UIKit
 
 final class NewTodoItemSettingViewController: UIViewController {
 
+    @IBOutlet private weak var titleTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    @IBAction func dismiss(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }

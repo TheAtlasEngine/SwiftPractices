@@ -17,6 +17,7 @@ final class MainViewController: UIViewController {
     }
 
     @IBAction func presentNewTodoItemSettingView(_ sender: Any) {
-        
+        let nextViewController = NewTodoItemSettingNavigationViewController.instantiateFromStoryboard()
+        present(nextViewController, animated: true, completion: nil)
     }
 }
