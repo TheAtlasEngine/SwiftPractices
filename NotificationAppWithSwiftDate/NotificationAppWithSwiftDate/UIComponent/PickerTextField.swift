@@ -11,7 +11,7 @@ import UIKit
 final class PickerTextField: UITextField {
     
     private var pickerView: UIPickerView!
-    private var dataList: [String]
+    private(set) var dataList: [String]
     
     init(dataList: [String]) {
         self.dataList = dataList
@@ -27,6 +27,10 @@ final class PickerTextField: UITextField {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         doneSelectRow()
+    }
+    
+    func setDataList(_ dataList: [String]) {
+        self.dataList = dataList
     }
 }
 
