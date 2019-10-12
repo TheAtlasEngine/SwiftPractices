@@ -10,8 +10,13 @@ import UIKit
 
 final class MainViewController: UIViewController {
 
+    @IBOutlet private weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
+    @IBAction func presentNewTodoItemSettingView(_ sender: Any) {
+        
+    }
 }
