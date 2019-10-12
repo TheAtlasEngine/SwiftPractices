@@ -12,14 +12,14 @@ protocol TodoItemCellViewModel {
 
     var title: String { get }
     var deadLine: Date { get }
-    var repeatUnit: String { get }
+    var repeatUnit: RepeatUnit { get }
 }
 
 struct DefaultTodoItemCellViewModel: TodoItemCellViewModel {
     
     let title: String
     let deadLine: Date
-    let repeatUnit: String
+    let repeatUnit: RepeatUnit
     
     init(todoItem: TodoItem) {
         self.title = todoItem.title
