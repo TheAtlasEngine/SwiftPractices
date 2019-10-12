@@ -10,6 +10,10 @@ import UIKit
 
 final class TodoItemCellView: UITableViewCell {
 
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var deadLineLabel: UILabel!
+    @IBOutlet private weak var RepeatUnitLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
