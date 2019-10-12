@@ -11,7 +11,7 @@ import Foundation
 protocol NewTodoItemSettingViewModel {
     
     var title: String { get }
-    var deadLine: Date { get }
+    var deadLine: DateComponents { get }
     var repeatUnit: RepeatUnit { get }
     
     mutating func setTitle(_ title: String)
@@ -24,7 +24,7 @@ protocol NewTodoItemSettingViewModel {
 struct DefaultNewTodoItemSettingViewModel: NewTodoItemSettingViewModel {
     
     private(set) var title: String
-    private(set) var deadLine: Date
+    private(set) var deadLine: DateComponents
     private(set) var repeatUnit: RepeatUnit
     
     mutating func setTitle(_ title: String) {
@@ -32,7 +32,7 @@ struct DefaultNewTodoItemSettingViewModel: NewTodoItemSettingViewModel {
     }
     
     mutating func setDeadLine(year: Int, month: Int, day: Int) {
-        guard let deadLine = DateComponents(year: year, month: month, day: day).date else { return }
+        let deadLine = DateComponents(year: year, month: month, day: day)
         self.deadLine = deadLine
     }
     

@@ -11,14 +11,14 @@ import Foundation
 protocol TodoItemCellViewModel {
 
     var title: String { get }
-    var deadLine: Date { get }
+    var deadLine: DateComponents { get }
     var repeatUnit: RepeatUnit { get }
 }
 
 struct DefaultTodoItemCellViewModel: TodoItemCellViewModel {
     
     let title: String
-    let deadLine: Date
+    let deadLine: DateComponents
     let repeatUnit: RepeatUnit
     
     init(todoItem: TodoItem) {

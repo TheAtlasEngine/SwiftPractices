@@ -10,10 +10,10 @@ import Foundation
 
 struct TodoItem {
     let title: String
-    let deadLine: Date
+    let deadLine: DateComponents
     let repeatUnit: RepeatUnit
     
-    init(title: String, deadLine: Date, repeatUnit: RepeatUnit) {
+    init(title: String, deadLine: DateComponents, repeatUnit: RepeatUnit) {
         self.title = title
         self.deadLine = deadLine
         self.repeatUnit = repeatUnit
