@@ -16,7 +16,9 @@ final class NewTodoItemSettingViewController: UIViewController {
         super.viewDidLoad()
 
     }
+    
     @IBAction func dismiss(_ sender: Any) {
+        view.endEditing(true)
         dismiss(animated: true, completion: nil)
     }
 }
