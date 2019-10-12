@@ -9,6 +9,7 @@
 import Foundation
 
 enum RepeatUnit: String {
+    case oneMinute
     case everyday
     case everyWeek
     case everyMonth
