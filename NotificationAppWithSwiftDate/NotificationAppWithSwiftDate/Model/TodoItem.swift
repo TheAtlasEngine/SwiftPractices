@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+struct TodoItem {
+    let title: String
+    let deadLine: Date
+    let repeatUnit: String
+    
+    init(title: String, deadLine: Date, repeatUnit: RepeatUnit) {
+        self.title = title
+        self.deadLine = deadLine
+        self.repeatUnit = repeatUnit.rawValue
+    }
+}
