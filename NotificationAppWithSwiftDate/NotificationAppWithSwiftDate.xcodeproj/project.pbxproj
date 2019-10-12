@@ -14,6 +14,7 @@
 		218CDCA023516B59003A42EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 218CDC9E23516B59003A42EB /* LaunchScreen.storyboard */; };
 		218CDCA923516ED4003A42EB /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CDCA823516ED4003A42EB /* TodoItem.swift */; };
 		218CDCB123516EEF003A42EB /* NotificationAppWithSwiftDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CDCB023516EEF003A42EB /* NotificationAppWithSwiftDateTests.swift */; };
+		218CDCB923516F8A003A42EB /* RepeatUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CDCB823516F8A003A42EB /* RepeatUnit.swift */; };
 		82D0ABD39C6CCA2569A1D69E /* Pods_NotificationAppWithSwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C010DD71D18D832053E42F /* Pods_NotificationAppWithSwiftDate.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		218CDCAE23516EEE003A42EB /* NotificationAppWithSwiftDateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotificationAppWithSwiftDateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		218CDCB023516EEF003A42EB /* NotificationAppWithSwiftDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAppWithSwiftDateTests.swift; sourceTree = "<group>"; };
 		218CDCB223516EEF003A42EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		218CDCB823516F8A003A42EB /* RepeatUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatUnit.swift; sourceTree = "<group>"; };
 		80C010DD71D18D832053E42F /* Pods_NotificationAppWithSwiftDate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotificationAppWithSwiftDate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D8903AFB04873C4DF0A52A /* Pods-NotificationAppWithSwiftDate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationAppWithSwiftDate.release.xcconfig"; path = "Target Support Files/Pods-NotificationAppWithSwiftDate/Pods-NotificationAppWithSwiftDate.release.xcconfig"; sourceTree = "<group>"; };
 		E7E9057550410C54313912FB /* Pods-NotificationAppWithSwiftDate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationAppWithSwiftDate.debug.xcconfig"; path = "Target Support Files/Pods-NotificationAppWithSwiftDate/Pods-NotificationAppWithSwiftDate.debug.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				218CDCA823516ED4003A42EB /* TodoItem.swift */,
+				218CDCB823516F8A003A42EB /* RepeatUnit.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				218CDCB923516F8A003A42EB /* RepeatUnit.swift in Sources */,
 				218CDC9823516B52003A42EB /* ViewController.swift in Sources */,
 				218CDCA923516ED4003A42EB /* TodoItem.swift in Sources */,
 				218CDC9623516B52003A42EB /* AppDelegate.swift in Sources */,
