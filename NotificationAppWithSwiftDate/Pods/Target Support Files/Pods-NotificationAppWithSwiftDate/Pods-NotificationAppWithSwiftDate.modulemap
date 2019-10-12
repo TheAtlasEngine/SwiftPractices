@@ -1,0 +1,6 @@
+framework module Pods_NotificationAppWithSwiftDate {
+  umbrella header "Pods-NotificationAppWithSwiftDate-umbrella.h"
+
+  export *
+  module * { export * }
+}
