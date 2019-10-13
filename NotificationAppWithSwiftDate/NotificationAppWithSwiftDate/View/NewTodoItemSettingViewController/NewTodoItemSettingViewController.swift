@@ -14,6 +14,7 @@ final class NewTodoItemSettingViewController: UIViewController {
     @IBOutlet private weak var yearPickerTextField: PickerTextField!
     @IBOutlet private weak var monthPickerTextField: PickerTextField!
     @IBOutlet private weak var dayPickerTextField: PickerTextField!
+    @IBOutlet weak var repeatUnitPickerTextField: PickerTextField!
     
     private var viewModel: NewTodoItemSettingViewModel!
     

@@ -67,36 +67,45 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yeb-PY-18W">
                                                         <rect key="frame" x="20" y="0.0" width="334" height="40"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lnm-HV-Pbs" customClass="PickerTextField" customModule="NotificationAppWithSwiftDate" customModuleProvider="target">
-                                                                <rect key="frame" x="144.5" y="5" width="45.5" height="30"/>
-                                                                <nil key="textColor"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                            </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="DD" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jr2-Km-biU" customClass="PickerTextField" customModule="NotificationAppWithSwiftDate" customModuleProvider="target">
-                                                                <rect key="frame" x="230" y="5" width="41.5" height="30"/>
-                                                                <nil key="textColor"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                            </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="YYYY" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VO9-fi-RD9" customClass="PickerTextField" customModule="NotificationAppWithSwiftDate" customModuleProvider="target">
-                                                                <rect key="frame" x="47" y="5" width="57.5" height="30"/>
-                                                                <nil key="textColor"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                            </textField>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WER-KR-8pS">
+                                                                <rect key="frame" x="0.0" y="5" width="334" height="30"/>
+                                                                <subviews>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="YYYY" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VO9-fi-RD9" customClass="PickerTextField" customModule="NotificationAppWithSwiftDate" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="68.5" height="30"/>
+                                                                        <nil key="textColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                    </textField>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lnm-HV-Pbs" customClass="PickerTextField" customModule="NotificationAppWithSwiftDate" customModuleProvider="target">
+                                                                        <rect key="frame" x="88.5" y="0.0" width="68.5" height="30"/>
+                                                                        <nil key="textColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                    </textField>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="DD" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jr2-Km-biU" customClass="PickerTextField" customModule="NotificationAppWithSwiftDate" customModuleProvider="target">
+                                                                        <rect key="frame" x="177" y="0.0" width="68.5" height="30"/>
+                                                                        <nil key="textColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                    </textField>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="repeat" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5IN-rj-7XG" customClass="PickerTextField" customModule="NotificationAppWithSwiftDate" customModuleProvider="target">
+                                                                        <rect key="frame" x="265.5" y="0.0" width="68.5" height="30"/>
+                                                                        <nil key="textColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                    </textField>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="oS8-8q-tlB"/>
+                                                                </constraints>
+                                                            </stackView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstItem="Lnm-HV-Pbs" firstAttribute="centerX" secondItem="yeb-PY-18W" secondAttribute="centerX" id="4fj-gc-E8q"/>
+                                                            <constraint firstAttribute="trailing" secondItem="WER-KR-8pS" secondAttribute="trailing" id="1qW-I0-DAo"/>
                                                             <constraint firstAttribute="height" constant="40" id="Eex-U6-B2a"/>
-                                                            <constraint firstItem="Lnm-HV-Pbs" firstAttribute="centerY" secondItem="yeb-PY-18W" secondAttribute="centerY" id="Lla-OQ-0cy"/>
-                                                            <constraint firstItem="VO9-fi-RD9" firstAttribute="leading" secondItem="yeb-PY-18W" secondAttribute="leading" constant="47" id="Mq6-hx-nKV"/>
-                                                            <constraint firstItem="VO9-fi-RD9" firstAttribute="centerY" secondItem="yeb-PY-18W" secondAttribute="centerY" id="TWR-Bt-90L"/>
-                                                            <constraint firstItem="Lnm-HV-Pbs" firstAttribute="leading" secondItem="VO9-fi-RD9" secondAttribute="trailing" constant="40" id="aUp-TZ-khs"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Jr2-Km-biU" secondAttribute="trailing" constant="62.5" id="ovC-i3-DEe"/>
-                                                            <constraint firstItem="Jr2-Km-biU" firstAttribute="leading" secondItem="Lnm-HV-Pbs" secondAttribute="trailing" constant="40" id="sBa-Rs-KBV"/>
-                                                            <constraint firstItem="Jr2-Km-biU" firstAttribute="centerY" secondItem="yeb-PY-18W" secondAttribute="centerY" id="vII-3a-h45"/>
+                                                            <constraint firstItem="WER-KR-8pS" firstAttribute="centerY" secondItem="yeb-PY-18W" secondAttribute="centerY" id="YWq-Rv-Tii"/>
+                                                            <constraint firstItem="WER-KR-8pS" firstAttribute="leading" secondItem="yeb-PY-18W" secondAttribute="leading" id="kfD-RT-zni"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gT1-Tp-Yt4" userLabel="Spacer">
@@ -163,6 +172,7 @@
                     <connections>
                         <outlet property="dayPickerTextField" destination="Jr2-Km-biU" id="EyO-vd-3bz"/>
                         <outlet property="monthPickerTextField" destination="Lnm-HV-Pbs" id="xYZ-Rf-7mg"/>
+                        <outlet property="repeatUnitPickerTextField" destination="5IN-rj-7XG" id="746-sq-BBU"/>
                         <outlet property="titleTextField" destination="FxI-MO-D7r" id="Ddj-wj-bTg"/>
                         <outlet property="yearPickerTextField" destination="VO9-fi-RD9" id="26K-3T-dtY"/>
                     </connections>
