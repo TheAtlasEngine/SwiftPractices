@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -110,15 +111,13 @@
                                                     <constraint firstAttribute="height" constant="40" id="nWU-PM-sRZ"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2b-ve-SQh">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2b-ve-SQh">
                                                 <rect key="frame" x="0.0" y="220" width="374" height="50"/>
-                                                <color key="backgroundColor" red="0.84313725490000002" green="0.90588235289999997" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="Creation_Button"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="WXl-hF-nkI"/>
                                                 </constraints>
-                                                <state key="normal" title="Add ">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </state>
+                                                <state key="normal" title="Add "/>
                                                 <connections>
                                                     <action selector="addNewTodoItem:" destination="Vw5-11-gCt" eventType="touchUpInside" id="Eco-S1-Ym2"/>
                                                 </connections>
@@ -156,6 +155,7 @@
                     <connections>
                         <outlet property="dayPickerTextField" destination="Jr2-Km-biU" id="EyO-vd-3bz"/>
                         <outlet property="monthPickerTextField" destination="Lnm-HV-Pbs" id="xYZ-Rf-7mg"/>
+                        <outlet property="newTodoItemCreationButton" destination="y2b-ve-SQh" id="aqV-kz-UOa"/>
                         <outlet property="repeatUnitPickerTextField" destination="5IN-rj-7XG" id="746-sq-BBU"/>
                         <outlet property="titleTextField" destination="FxI-MO-D7r" id="Ddj-wj-bTg"/>
                         <outlet property="yearPickerTextField" destination="VO9-fi-RD9" id="26K-3T-dtY"/>
@@ -184,4 +184,9 @@
             <point key="canvasLocation" x="395.6521739130435" y="-169.41964285714286"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="Creation_Button">
+            <color red="0.20701279963278774" green="0.28160691624365486" blue="0.21819072060035882" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
 </document>

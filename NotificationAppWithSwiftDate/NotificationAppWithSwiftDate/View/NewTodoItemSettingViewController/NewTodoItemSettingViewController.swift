@@ -15,6 +15,7 @@ final class NewTodoItemSettingViewController: UIViewController {
     @IBOutlet private weak var monthPickerTextField: PickerTextField!
     @IBOutlet private weak var dayPickerTextField: PickerTextField!
     @IBOutlet private weak var repeatUnitPickerTextField: PickerTextField!
+    @IBOutlet private weak var newTodoItemCreationButton: UIButton!
     
     private var viewModel: NewTodoItemSettingViewModel!
     
@@ -85,6 +86,9 @@ private extension NewTodoItemSettingViewController {
     }
     
     func bind() {
+        newTodoItemCreationButton.setBackgroundColor(color: .creationButtonDefault, forState: .normal)
+        newTodoItemCreationButton.setBackgroundColor(color: .creationButtonHighlighted, forState: .highlighted)
+        
         viewModel = DefaultNewTodoItemSettingViewModel()
         
         yearPickerTextField.setDataList(viewModel.yearList)
