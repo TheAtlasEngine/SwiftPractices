@@ -11,18 +11,12 @@ import UIKit
 final class PickerTextField: UITextField {
     
     private var pickerView: UIPickerView!
-    private(set) var dataList: [String]
-    
-    init(dataList: [String]) {
-        self.dataList = dataList
-        super.init(frame: .zero)
-        
-        setupToolbar()
-        setupPickerView()
-    }
+    private(set) var dataList: [String]!
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        setupToolbar()
+        setupPickerView()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
