@@ -42,16 +42,19 @@ final class NewTodoItemSettingViewController: UIViewController {
         guard let yearString = yearPickerTextField.text else { return }
         guard let monthString = monthPickerTextField.text else { return }
         guard let dayString = dayPickerTextField.text else { return }
+        guard let repeatUnitString = repeatUnitPickerTextField.text else { return }
+        
+        guard !title.isEmpty else { return }
         
         guard let year = Int(yearString) else { return }
         guard let month = Int(monthString) else { return }
         guard let day = Int(dayString) else { return }
         
-        guard !title.isEmpty else { return }
+        guard let repeatUnit = RepeatUnit(rawValue: repeatUnitString) else { return }
         
         viewModel.setTitle(title)
         viewModel.setDeadLine(year: year, month: month, day: day)
-        viewModel.setRepeatUnit(.none)
+        viewModel.setRepeatUnit(repeatUnit)
         
         let todoItem = viewModel.makeNewTodoItem()
         onEvent?(.add(todoItem))
@@ -67,5 +70,8 @@ private extension NewTodoItemSettingViewController {
         yearPickerTextField.setDataList(viewModel.yearList)
         monthPickerTextField.setDataList(viewModel.monthList)
         dayPickerTextField.setDataList(viewModel.dayList)
+        
+        let repeatUnitStrings = RepeatUnit.allCases.map { $0.rawValue }
+        repeatUnitPickerTextField.setDataList(repeatUnitStrings)
     }
 }
