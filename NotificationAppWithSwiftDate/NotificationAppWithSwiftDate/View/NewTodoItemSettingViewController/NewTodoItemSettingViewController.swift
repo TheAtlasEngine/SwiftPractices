@@ -14,7 +14,7 @@ final class NewTodoItemSettingViewController: UIViewController {
     @IBOutlet private weak var yearPickerTextField: PickerTextField!
     @IBOutlet private weak var monthPickerTextField: PickerTextField!
     @IBOutlet private weak var dayPickerTextField: PickerTextField!
-    @IBOutlet weak var repeatUnitPickerTextField: PickerTextField!
+    @IBOutlet private weak var repeatUnitPickerTextField: PickerTextField!
     
     private var viewModel: NewTodoItemSettingViewModel!
     
@@ -27,6 +27,7 @@ final class NewTodoItemSettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUpTextFields()
         bind()
     }
     
@@ -64,6 +65,23 @@ final class NewTodoItemSettingViewController: UIViewController {
 
 private extension NewTodoItemSettingViewController {
     
+    func setUpTextFields() {
+        titleTextField.delegate = self
+        titleTextField.tag = 0
+        
+        yearPickerTextField.delegate = self
+        yearPickerTextField.tag = 1
+        
+        monthPickerTextField.delegate = self
+        monthPickerTextField.tag = 2
+        
+        dayPickerTextField.delegate = self
+        dayPickerTextField.tag = 3
+        
+        repeatUnitPickerTextField.delegate = self
+        repeatUnitPickerTextField.tag = 4
+    }
+    
     func bind() {
         viewModel = DefaultNewTodoItemSettingViewModel()
         
@@ -73,5 +91,19 @@ private extension NewTodoItemSettingViewController {
         
         let repeatUnitStrings = RepeatUnit.allCases.map { $0.rawValue }
         repeatUnitPickerTextField.setDataList(repeatUnitStrings)
+    }
+}
+
+extension NewTodoItemSettingViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        
+        return false
     }
 }

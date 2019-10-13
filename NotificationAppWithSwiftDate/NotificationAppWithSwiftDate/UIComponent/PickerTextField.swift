@@ -47,7 +47,7 @@ private extension PickerTextField {
             action: nil
         )
         let doneItem = UIBarButtonItem(
-            barButtonSystemItem: .done,
+            barButtonSystemItem: .fastForward,
             target: self,
             action: #selector(doneSelectRow)
         )
@@ -65,6 +65,12 @@ private extension PickerTextField {
         endEditing(true)
         let selectedRow = pickerView.selectedRow(inComponent: 0)
         text = dataList[selectedRow]
+        
+        if let nextField = superview?.viewWithTag(tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            resignFirstResponder()
+        }
     }
     
     func setupPickerView() {
