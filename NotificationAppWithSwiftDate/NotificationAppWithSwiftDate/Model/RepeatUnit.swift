@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum RepeatUnit: String {
+enum RepeatUnit: String, CaseIterable {
     case none
     case oneMinute
     case everyday
