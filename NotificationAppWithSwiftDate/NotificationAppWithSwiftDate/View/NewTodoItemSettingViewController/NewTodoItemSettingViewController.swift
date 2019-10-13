@@ -17,11 +17,23 @@ final class NewTodoItemSettingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        bind()
     }
     
     @IBAction func dismiss(_ sender: Any) {
         view.endEditing(true)
         dismiss(animated: true, completion: nil)
+    }
+}
+
+private extension NewTodoItemSettingViewController {
+    
+    func bind() {
+        let viewModel = DefaultNewTodoItemSettingViewModel()
+        
+        yearPickerTextField.setDataList(viewModel.yearList)
+        monthPickerTextField.setDataList(viewModel.monthList)
+        dayPickerTextField.setDataList(viewModel.dayList)
     }
 }
