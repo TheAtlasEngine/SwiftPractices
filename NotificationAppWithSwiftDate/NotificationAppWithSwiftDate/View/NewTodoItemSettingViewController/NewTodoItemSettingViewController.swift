@@ -66,6 +66,8 @@ final class NewTodoItemSettingViewController: UIViewController {
 private extension NewTodoItemSettingViewController {
     
     func setUpTextFields() {
+        titleTextField.becomeFirstResponder()
+        
         titleTextField.delegate = self
         titleTextField.tag = 0
         
