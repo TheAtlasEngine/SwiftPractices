@@ -37,13 +37,16 @@ struct TodoListRowView: View {
             checkmark(isDone: todo.isDone)
         }
     }
+}
+
+private extension TodoListRowView {
     
-    private func checkmark(isDone: Bool) -> some View {
+    func checkmark(isDone: Bool) -> some View {
         Image(systemName: isDone ? "checkmark.square" : "square")
             .onTapGesture { toggleCompletion() }
     }
     
-    private func toggleCompletion() {
+    func toggleCompletion() {
         let newTodo = Todo(
             id: todo.id,
             text: todo.text,
@@ -52,12 +55,12 @@ struct TodoListRowView: View {
         repository.updateTodo(todo, to: newTodo)
     }
     
-    private func editText(_ newText: String) {
+    func editText(_ newText: String) {
         let newTodo = Todo(id: todo.id, text: newText, isDone: todo.isDone)
         repository.updateTodo(todo, to: newTodo)
     }
     
-    private func deleteTodo() {
+    func deleteTodo() {
         guard let index = repository.allTodos.firstIndex(of: todo) else { return }
         repository.deleteTodo(at: IndexSet(integer: index))
     }
