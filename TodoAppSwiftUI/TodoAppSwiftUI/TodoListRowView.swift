@@ -22,11 +22,7 @@ struct TodoListRowView: View {
 
     private var textField: some View {
         TextField("", text: $text, onEditingChanged: { _ in }) {
-            if text.isEmpty {
-                deleteTodo()
-            } else {
-                editText(text)
-            }
+            handleText()
         }
     }
     
@@ -63,5 +59,13 @@ private extension TodoListRowView {
     func deleteTodo() {
         guard let index = repository.allTodos.firstIndex(of: todo) else { return }
         repository.deleteTodo(at: IndexSet(integer: index))
+    }
+    
+    func handleText() {
+        if text.isEmpty {
+            deleteTodo()
+        } else {
+            editText(text)
+        }
     }
 }
