@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct Todo: Codable, Hashable {
+public struct Todo: Codable, Hashable {
 
-    let id: UUID
-    let text: String
-    let isDone: Bool
+    public let id: UUID
+    public let text: String
+    public let isDone: Bool
     
-    init(id: UUID = .init(), text: String, isDone: Bool) {
+    internal init(id: UUID = .init(), text: String, isDone: Bool) {
         self.id = id
         self.text = text
         self.isDone = isDone
