@@ -19,14 +19,17 @@ public enum TodoValidationError: Error {
 }
 
 public struct TodoFactory {
-    
-    /// -Throws: `TodoValidationError`
-    public static func makeTodo(id: UUID = .init(), text: String, isDone: Bool) throws -> Todo {
+
+    public static func makeTodo(
+        id: UUID = .init(),
+        text: String,
+        isDone: Bool
+    ) -> Result<Todo, TodoValidationError> {
         guard !text.isEmpty else {
-            throw TodoValidationError.textIsEmpty
+            return .failure(.textIsEmpty)
         }
         
-        return Todo(id: id, text: text, isDone: isDone)
+        return .success(Todo(id: id, text: text, isDone: isDone))
     }
     
     public static func makeToggledTodo(_ todo: Todo) -> Todo {
