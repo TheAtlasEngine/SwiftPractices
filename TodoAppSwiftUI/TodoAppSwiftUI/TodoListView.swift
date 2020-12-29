@@ -5,6 +5,7 @@
 //  Created by Kosuke Nishimura on 2020/12/24.
 //
 
+import DomainLayer
 import SwiftUI
 
 struct TodoListView: View {
@@ -21,7 +22,9 @@ struct TodoListView: View {
                 ForEach(repository.allTodos, id: \.self) { (todo) in
                     TodoListRowView(todo: todo)
                 }
-                .onDelete { repository.deleteTodo(at: $0) }
+                .onDelete { indexSet in
+                    repository.deleteTodo(at: indexSet.first!)
+                }
             }
             .navigationTitle("Todo List")
             .navigationBarItems(

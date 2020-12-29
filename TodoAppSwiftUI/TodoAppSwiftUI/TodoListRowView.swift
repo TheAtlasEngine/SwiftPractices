@@ -5,6 +5,7 @@
 //  Created by Kosuke Nishimura on 2020/12/25.
 //
 
+import DomainLayer
 import SwiftUI
 
 struct TodoListRowView: View {
@@ -43,29 +44,30 @@ private extension TodoListRowView {
     }
     
     func toggleCompletion() {
-        let newTodo = Todo(
-            id: todo.id,
-            text: todo.text,
-            isDone: !todo.isDone
-        )
-        repository.updateTodo(todo, to: newTodo)
-    }
-    
-    func editText(_ newText: String) {
-        let newTodo = Todo(id: todo.id, text: newText, isDone: todo.isDone)
+        let newTodo = TodoFactory.makeToggledTodo(todo)
         repository.updateTodo(todo, to: newTodo)
     }
     
     func deleteTodo() {
         guard let index = repository.allTodos.firstIndex(of: todo) else { return }
-        repository.deleteTodo(at: IndexSet(integer: index))
+        repository.deleteTodo(at: index)
+    }
+    
+    func handleValidationError(_ error: TodoValidationError) {
+        switch error {
+        case .textIsEmpty:
+            deleteTodo()
+        }
     }
     
     func handleText() {
-        if text.isEmpty {
-            deleteTodo()
-        } else {
-            editText(text)
+        let result = TodoFactory.makeTodo(id: todo.id, text: text, isDone: todo.isDone)
+        
+        switch result {
+        case .success(let newTodo):
+            repository.updateTodo(todo, to: newTodo)
+        case .failure(let error):
+            handleValidationError(error)
         }
     }
 }

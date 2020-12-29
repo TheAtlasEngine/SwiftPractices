@@ -5,6 +5,7 @@
 //  Created by Kosuke Nishimura on 2020/12/25.
 //
 
+import DomainLayer
 import SwiftUI
 
 struct NewTodoView: View {
@@ -12,6 +13,7 @@ struct NewTodoView: View {
     @EnvironmentObject private var repository: TodoRepository
     
     @State private var shouldShowValidationError: Bool = false
+    @State private var validationError: TodoValidationError = .textIsEmpty
     
     @State private var text: String = ""
     
@@ -19,15 +21,10 @@ struct NewTodoView: View {
     
     private var okButton: some View {
         Button("OK") {
-            guard isValidText() else {
-                shouldShowValidationError = true
-                return
-            }
             addNewTodo()
-            dismiss()
         }
         .alert(isPresented: $shouldShowValidationError) {
-            Alert(title: Text("Empty title is not allowed."))
+            Alert.make(with: validationError)
         }
     }
     
@@ -43,13 +40,18 @@ struct NewTodoView: View {
 
 private extension NewTodoView {
     
-    func isValidText() -> Bool {
-        !text.isEmpty
-    }
-    
     func addNewTodo() {
-        let newTodo = Todo(text: text, isDone: false)
-        repository.add(newTodo)
+        
+        let result = TodoFactory.makeTodo(text: text, isDone: false)
+        
+        switch result {
+        case .success(let newTodo):
+            repository.add(newTodo)
+            dismiss()
+        case .failure(let error):
+            shouldShowValidationError = true
+            validationError = error
+        }
     }
     
     func dismiss() {

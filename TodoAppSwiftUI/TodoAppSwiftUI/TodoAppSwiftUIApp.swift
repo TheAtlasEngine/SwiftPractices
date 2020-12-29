@@ -5,6 +5,7 @@
 //  Created by Kosuke Nishimura on 2020/12/24.
 //
 
+import DomainLayer
 import SwiftUI
 
 @main
