@@ -19,12 +19,8 @@ struct TodoListView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(repository.allTodos, id: \.self) { (todo) in
-                    TodoListRowView(todo: todo)
-                }
-                .onDelete { indexSet in
-                    repository.deleteTodo(at: indexSet.first!)
-                }
+                ForEach(repository.allTodos, id: \.self) { TodoListRowView(todo: $0) }
+                    .onDelete { deleteTodo(at: $0) }
             }
             .navigationTitle("Todo List")
             .navigationBarItems(
@@ -47,6 +43,13 @@ struct TodoListView: View {
             isPresented: $isNewTodoViewPresented,
             content: { NewTodoView(isPresented: $isNewTodoViewPresented) }
         )
+    }
+}
+
+private extension TodoListView {
+    
+    func deleteTodo(at offSet: IndexSet) {
+        offSet.forEach { repository.deleteTodo(at: $0) }
     }
 }
 
